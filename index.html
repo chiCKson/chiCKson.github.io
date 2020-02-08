@@ -51,6 +51,27 @@
 
 	</head>
 	<body>
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+			https://firebase.google.com/docs/web/setup#available-libraries -->
+
+		<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyA1unbG1rm-KsI3ECobj8eBXZRJmsOeej0",
+			authDomain: "erandra-me.firebaseapp.com",
+			databaseURL: "https://erandra-me.firebaseio.com",
+			projectId: "erandra-me",
+			storageBucket: "erandra-me.appspot.com",
+			messagingSenderId: "878686144445",
+			appId: "1:878686144445:web:42e841f9069514468bf4d4"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		var database = firebase.database();
+</script>
 	<div id="colorlib-page">
 		<div class="container-wrap">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
