@@ -70,7 +70,11 @@
       page_id="279309738797464"
       minimized="false">
 </div>
-<script>document.getElementById("test").minimized = true;</script>
+<script>document.getElementById("test").minimized = true;
+function open(){
+  document.getElementById("test").minimized = false;
+}
+</script>
   <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" role="status">
@@ -131,7 +135,7 @@
               <div class="slide-text">
                 <h1>Welcome</h1>
                 <p class="mb-5">කෙළිය(KELIYA) IT Solutions.We provide various IT Solutions to your business.</p>
-                <p><a href="#contact-section" class="btn btn-outline-light py-3 px-5">Get Quote</a></p>
+                <p><a href="" onClick="open();" class="btn btn-outline-light py-3 px-5">Get Quote</a></p>
               </div>
               <div class="slide-text">
                 <h1>ECOMMERCE WEbsites.</h1>
