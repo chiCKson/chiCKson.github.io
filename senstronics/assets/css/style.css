@@ -13300,10 +13300,12 @@ blockquote {
 
 @media only screen and (max-width: 767px) {
   .inner-img-two {
-    margin: auto !important;
+    
     text-align: center;
   }
   .inner-img-two img {
+    padding-top: 0px;
+    margin:0px;
     max-width: 254px;
   }
 }
