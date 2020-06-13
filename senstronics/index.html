@@ -42,7 +42,13 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-
+  <!--Map-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
 </head>
 
 <body>
@@ -913,57 +919,80 @@
 
 
         <!--====================  Conact us Section Start ====================-->
-        <div class="contact-us-section-wrappaer section-space--ptb_100">
+        <div class="contact-us-area infotechno-contact-us-bg section-space--pt_100">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-lg-6">
-                        <div class="conact-us-wrap-one">
-                            <h3 class="heading">Obtaining further information by <span class="text-color-primary">make a contact</span> with our experienced IT staffs. </h3>
+                    <div class="col-lg-7">
+                        <div class="image">
+                            
+                            <div id="mapid" style="height: 587px;width: 572px; "></div>
+                            <script>
+                                
+                            var mymap = L.map('mapid').setView([22.5557, 113.9687], 13);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                    maxZoom: 17,
+                                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(mymap);
+ 
+                            var marker = L.marker([22.5557, 113.9687]).addTo(mymap).bindPopup("<b>Sensetronics</b>").openPopup();
 
-                            <div class="sub-heading">We’re available for 8 hours a day!<br>Contact to require a detailed analysis and assessment of your plan.</div>
-
-                            </div>
+                            </script>
                         </div>
+                    </div>
 
-                        <div class="col-lg-6 col-lg-6">
-                            <div class="contact-form-wrap">
-                                <form id="contact-form" action="assets/php/mail.php" method="post">
-                                    <div class="contact-form">
-                                        <div class="contact-input">
-                                            <div class="contact-inner">
-                                                <input name="con_name" type="text" placeholder="Name *">
+                    <div class="col-lg-4 ml-auto">
+                        <div class="contact-info style-two text-left">
+
+                            
+
+                            <div class="contact-list-item">
+                                <div class="content-wrap">
+                                        <div class="content">
+                                            <div class="icon">
+                                                <span class="fal fa-map-marker"></span>
                                             </div>
-                                            <div class="contact-inner">
-                                                <input name="con_email" type="email" placeholder="Email *">
+                                            <div class="main-content">
+                                                <h6 class="heading">We are in</h6>
+                                                <div>Room 304, Block A, No.6 Gongye Road,<br>
+                                                    Fuhai Tangewei Village, Baoan district, 
+                                                    Shenzhen 518103
+                                                    Guangdong, 
+                                                    P R of China</div>
                                             </div>
-                                        </div>
-                                        <div class="contact-select">
-                                            <div class="form-item contact-inner">
-                                                <span class="inquiry">
-                                        <select name="inquiry" class="select-item">
-                                            <option value="Your inquiry about">Your inquiry about</option>
-                                            <option value="General Information Request">General Information Request</option>
-                                            <option value="Partner Relations">Partner Relations</option>
-                                            <option value="Careers">Careers</option>
-                                            <option value="Software Licencing">Software Licencing</option>
-                                        </select>
-                                    </span>
-                                            </div>
-                                        </div>
-                                        <div class="contact-inner contact-message">
-                                            <textarea name="con_message" placeholder="Please describe what you need."></textarea>
-                                        </div>
-                                        <div class="submit-btn mt-20">
-                                            <button class="ht-btn ht-btn-md" type="submit">Get a free consultation</button>
-                                            <p class="form-messege"></p>
                                         </div>
                                     </div>
-                                </form>
+                                <a href="tel:+8675523055520" class="single-contact-list">
+                                    <div class="content-wrap">
+                                        <div class="content">
+                                            <div class="icon">
+                                                <span class="fal fa-phone"></span>
+                                            </div>
+                                            <div class="main-content">
+                                                <h6 class="heading">Call for advice now!</h6>
+                                                <div class="text">+86 755 23055520</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="mailto:info@sensetronics-ltd.com" class="single-contact-list">
+                                    <div class="content-wrap">
+                                        <div class="content">
+                                            <div class="icon">
+                                                <span class="fal fa-envelope"></span>
+                                            </div>
+                                            <div class="main-content">
+                                                <h6 class="heading">Say hello</h6>
+                                                <div class="text">info@sensetronics-ltd.com</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
             <!--====================  Conact us Section End  ====================-->
             <!--============ Contact Us Area Start =================-->
             <div class="contact-us-area infotechno-contact-us-bg section-space--pt_100">
