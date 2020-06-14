@@ -58,7 +58,7 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <link rel-"stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
 </head>
 
 <body>
@@ -329,7 +329,8 @@
 
                         <div class="col-lg-4 col-md-6 cat--1">
                             <!-- Projects Wrap Start -->
-                            <a href="#" class="projects-wrap style-2">
+                            <a href="https://unsplash.it/1200/768.jpg?image=263" data-toggle="lightbox" data-gallery="hidden-images" class="projects-wrap style-2">
+ 
                                 <div class="projects-image-box">
                                     <div class="projects-image">
                                         <img class="img-fluid" src="assets/images/products/m3.jpg" alt="">
@@ -342,6 +343,12 @@
                             </a>
                             <!-- Projects Wrap End -->
                         </div>
+                        <!-- elements not showing, use data-remote -->
+                    <div data-toggle="lightbox" data-gallery="hidden-images" data-remote="https://unsplash.it/1200/768.jpg?image=264" ></div>
+   
+                    <div data-toggle="lightbox" data-gallery="hidden-images" data-remote="https://unsplash.it/1200/768.jpg?image=265" ></div>
+                    <div data-toggle="lightbox" data-gallery="hidden-images" data-remote="https://unsplash.it/1200/768.jpg?image=266" ></div>
+                    <div data-toggle="lightbox" data-gallery="hidden-images" data-remote="https://unsplash.it/1200/768.jpg?image=267" ></div>
                         <div class="col-lg-4 col-md-6 cat--2">
                             <!-- Projects Wrap Start -->
                             <a href="#" class="projects-wrap style-2">
@@ -708,11 +715,17 @@
     <!--
     <script src="assets/js/plugins/plugins.min.js"></script>
     -->
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+    </script>
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 </body>
 
 </html>
