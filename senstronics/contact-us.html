@@ -288,20 +288,20 @@
                                     <div class="contact-form">
                                         <div class="contact-input">
                                             <div class="contact-inner">
-                                                <input name="con_name" type="text" placeholder="Name *">
+                                                <input name="con_name" id='con_name' type="text" placeholder="Name *">
                                             </div>
                                             <div class="contact-inner">
-                                                <input name="con_email" type="email" placeholder="Email *">
+                                                <input name="con_email" id="con_email" type="email" placeholder="Email *">
                                             </div>
                                         </div>
                                         <div class="contact-inner">
-                                            <input name="con_subject" type="text" placeholder="Subject *">
+                                            <input name="con_subject" id="con_subject" type="text" placeholder="Subject *">
                                         </div>
                                         <div class="contact-inner contact-message">
-                                            <textarea name="con_message" placeholder="Please describe what you need."></textarea>
+                                            <textarea name="con_message" id="con_message" placeholder="Please describe what you need."></textarea>
                                         </div>
                                         <div class="submit-btn mt-20">
-                                            <button class="ht-btn ht-btn-md" type="submit">Send message</button>
+                                            <button class="ht-btn ht-btn-md" onClick="sendmail()" type="button">Send message</button>
                                             <p class="form-messege"></p>
                                         </div>
                                     </div>
@@ -622,6 +622,30 @@
 
         <!-- Main JS -->
         <script src="assets/js/main.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+          
+       <script>
+           
+           function sendmail(){
+            var body=document.getElementById('con_message').value
+           var top= "Dear sam,<br> One of your sensetronic website visitor is trying to contact you this is his message.<br>"
+           var top2="<br><h6>Contact details of the visitor<h6><br>Name:"
+           var name=document.getElementById('con_name').value
+           var top3="<br>Email:"
+           var em=document.getElementById('con_email').value
+           var msg=top.concat(body,top2,name,top3,em)
+                Email.send({
+                    SecureToken : "6baae4d1-0529-4058-ba45-c07cbce7f96f",
+                    To : 'erandraj@gmail.com',
+                    From : document.getElementById('con_email').value,
+                    Subject : document.getElementById('con_subject').value,
+                    Body : msg
+                }).then(
+                message => alert("Message send Successfully.")
+                );
+           }
+
+       </script>
 
 
 </body>
