@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.16.1//firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB9axE3yW5zMmo7YRPv0NvmWYa1BAADXtE",
+    authDomain: "test-ba558.firebaseapp.com",
+    databaseURL: "https://test-ba558.firebaseio.com",
+    projectId: "test-ba558",
+    storageBucket: "test-ba558.appspot.com",
+    messagingSenderId: "261316983649",
+    appId: "1:261316983649:web:85f8e6bcc637ca904b6320"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+
+
+
+function writeUserData(id, q) {
+    firebase.database().ref('questions/' + id).set({
+        question: q,
+        id:id
+    });
+}
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+var randomnumber=Math.floor(Math.random()*1000000)
+writeUserData(randomnumber,getUrlVars()['paper']);
+</script>
+</body>
+</html>
